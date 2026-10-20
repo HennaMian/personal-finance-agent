@@ -1,0 +1,16 @@
+{
+  "provider": "scripted failure fixture",
+  "model": "intentionally-invalid",
+  "interactions": [
+    {
+      "purpose": "orchestration",
+      "prompt": "Intentionally malformed response used to demonstrate controller recovery.",
+      "response": "I think you should add up the numbers now."
+    },
+    {
+      "purpose": "orchestration",
+      "prompt": "Second intentionally malformed response used to reach the configured step limit.",
+      "response": "{\"tool\": \"not_a_real_tool\"}"
+    }
+  ]
+}

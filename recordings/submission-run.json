@@ -1,0 +1,26 @@
+{
+  "provider": "OpenAI ChatGPT",
+  "model": "Codex (development-session recording)",
+  "interactions": [
+    {
+      "purpose": "orchestration",
+      "prompt": "Controller prompt: state has missing categories, no totals, and no report; choose one allowed tool.",
+      "response": "{\"tool\":\"categorize_transactions\",\"arguments\":{}}"
+    },
+    {
+      "purpose": "categorization",
+      "prompt": "Categorize the missing rows using only the allow-listed categories; return an id-to-category JSON object.",
+      "response": "{\"transactions_uncategorized:2\":\"Food\",\"transactions_uncategorized:3\":\"Transportation\",\"transactions_uncategorized:5\":\"Shopping\",\"transactions_uncategorized:7\":\"Transportation\",\"transactions_uncategorized:9\":\"Food\",\"transactions_uncategorized:13\":\"Food\",\"transactions_uncategorized:15\":\"Food\",\"transactions_uncategorized:16\":\"Other\",\"transactions_uncategorized:17\":\"Cash\",\"transactions_uncategorized:19\":\"Food\",\"transactions_uncategorized:20\":\"Transfers\",\"transactions_uncategorized:21\":\"Home\",\"transactions_uncategorized:22\":\"Housing\",\"transactions_uncategorized:24\":\"Other\",\"transactions_uncategorized:25\":\"Shopping\",\"transactions_uncategorized:26\":\"Income\",\"transactions_uncategorized:28\":\"Transportation\",\"transactions_uncategorized:29\":\"Food\",\"transactions_uncategorized:30\":\"Income\",\"transactions_uncategorized:31\":\"Shopping\"}"
+    },
+    {
+      "purpose": "orchestration",
+      "prompt": "Controller prompt: categorization succeeded, totals are absent, and report is absent; choose one allowed tool.",
+      "response": "{\"tool\":\"compute_totals\",\"arguments\":{}}"
+    },
+    {
+      "purpose": "orchestration",
+      "prompt": "Controller prompt: categories and deterministic totals are present, report is absent; choose one allowed tool.",
+      "response": "{\"tool\":\"write_report\",\"arguments\":{}}"
+    }
+  ]
+}
